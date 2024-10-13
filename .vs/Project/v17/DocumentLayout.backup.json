@@ -1,0 +1,246 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\businessobject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\dataaccess\\repository\\services\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\services\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\dataaccess\\dataaccess\\newprojectdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dataaccess\\newprojectdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\dataaccess\\repository\\services\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\services\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\businessobject\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\dataaccess\\repository\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 422,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\Services\\ProductRepository.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\ProductRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\Services\\ProductRepository.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAApwHoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:35:20.505Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\Services\\OrderRepository.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\OrderRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\Services\\OrderRepository.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAADwv4gAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:32:11.645Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "EShopAPI\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowE4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:53:27.586Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "EShopAPI\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAlwD0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:53:28.361Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Models\\Product.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\Models\\Product.cs",
+              "RelativeToolTip": "BusinessObject\\Models\\Product.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T09:17:16.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Models\\Order.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\Models\\Order.cs",
+              "RelativeToolTip": "BusinessObject\\Models\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:44:57.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T08:38:41.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NewProjectDBContext.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\DataAccess\\NewProjectDBContext.cs",
+              "RelativeDocumentMoniker": "DataAccess\\DataAccess\\NewProjectDBContext.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\DataAccess\\NewProjectDBContext.cs",
+              "RelativeToolTip": "DataAccess\\DataAccess\\NewProjectDBContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAtwBYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T06:24:19.897Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 128,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 90,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 90,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{5b6781c0-e99d-11d0-9954-00a0c91bc8e5}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

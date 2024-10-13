@@ -1,0 +1,191 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\tuhoc\\ass03\\eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\tuhoc\\ass03\\dataaccess\\repository\\services\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\services\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\tuhoc\\ass03\\dataaccess\\repository\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\tuhoc\\ass03\\eshopapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\tuhoc\\ass03\\eshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 264,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "EShopAPI\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T14:00:05.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductManager.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\DataAccess\\Repository\\Services\\ProductManager.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\Services\\ProductManager.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\DataAccess\\Repository\\Services\\ProductManager.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\Services\\ProductManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T12:43:27.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EShopAPI\\appsettings.json",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\appsettings.json",
+              "RelativeToolTip": "EShopAPI\\appsettings.json",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAYwBAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-05T13:14:47.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\EShopAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EShopAPI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:48:50.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\DataAccess\\Repository\\Services\\UserServices.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\Services\\UserServices.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\tuhoc\\Ass03\\DataAccess\\Repository\\Services\\UserServices.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\Services\\UserServices.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAzwG8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T13:52:18.971Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 264,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1304,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1304,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{5b6781c0-e99d-11d0-9954-00a0c91bc8e5}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
