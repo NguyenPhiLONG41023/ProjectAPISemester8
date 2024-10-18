@@ -47,7 +47,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime?>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 9, 12, 51, 46, 163, DateTimeKind.Local).AddTicks(9777));
+                        .HasDefaultValue(new DateTime(2024, 10, 16, 23, 16, 36, 223, DateTimeKind.Local).AddTicks(2105));
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -97,7 +97,7 @@ namespace DataAccess.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("Text");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");

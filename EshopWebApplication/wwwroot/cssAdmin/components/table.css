@@ -1,0 +1,108 @@
+.m-page-grid {
+    height: 300px;
+    flex: 1;
+}
+
+.m-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px;
+    /* table-layout: fixed; */
+}
+
+.m-table th,
+.m-table td {
+    border: 1px solid #E0E0E0;
+    height: 48px;
+    padding: 0 20px;
+}
+
+.m-table tbody td {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: RobotoRegular;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative; */
+}
+
+.m-table thead td {
+    font-weight: 500;
+    font-size: 14px;
+    font-family: RobotoMedium;
+}
+
+.m-table thead {
+    background-color: #EEEEEE;
+}
+
+.m-table .text-align-center {
+    text-align: center;
+}
+
+.m-table .text-align-left {
+    text-align: left;
+}
+
+.m-table tbody tr:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.m-row-selected {
+    background-color: #EDF8EB;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #50B83C;
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    position: absolute;
+    display: none;
+    width: max-content;
+    background-color: #212121;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 9px 12px;
+    top: 80%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    display: block;
+}
+
+#table-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+#table-scroll {
+    height: 100%;
+    overflow: auto;
+}
+
+#table-wrapper table {
+    width: 100%;
+}

@@ -1,0 +1,89 @@
+input[type="text"],
+input[type="date"] {
+    font-family: RobotoRegular;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    font-family: RobotoRegular;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.m-form__label {
+    height: 19px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: RobotoMedium;
+    color: #212121;
+}
+
+.m-form__label--sex {
+    height: 19px;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: RobotoRegular;
+    color: #212121;
+}
+
+.m-form__input {
+    width: 100%;
+    margin-top: 8px;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.m-form__input:focus {
+    outline: unset;
+    border: 1px solid #50b83c;
+}
+
+.m-form__input--date {
+    padding: 0 16px;
+    margin-top: 8px;
+    height: 36px;
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.m-form__input--date:focus {
+    outline: unset;
+    border: 1px solid #50b83c;
+}
+
+.m-form__radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 12px 0;
+}
+
+.m-form__radio div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.m-form__radio input {
+    height: 20px;
+    width: 20px;
+    border: 2px solid #666666;
+    margin: 0px 8px 0px 0px;
+}
+
+.input--invalid{
+    border: 1px solid red;
+}

@@ -14,6 +14,7 @@ namespace DataAccess.Repository.Services
     {
         private readonly NewProjectDBContext _context;
         private readonly IMapper _mapper;
+
         public OrderDetailRepository(NewProjectDBContext context, IMapper mapper)
         {
             _context = context;

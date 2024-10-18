@@ -34,3 +34,4 @@ D:\FPTCode\8\PRN231\trenlop\Project\DataAccess\obj\Debug\net6.0\refint\DataAcces
 D:\FPTCode\8\PRN231\trenlop\Project\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\FPTCode\8\PRN231\trenlop\Project\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
 D:\FPTCode\8\PRN231\trenlop\Project\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+D:\FPTCode\8\PRN231\trenlop\Project\DataAccess\obj\Debug\net6.0\DataAccess.sourcelink.json

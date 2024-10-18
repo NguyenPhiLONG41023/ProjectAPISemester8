@@ -1,0 +1,44 @@
+@import url(./components/button.css);
+@import url(./components/input.css);
+@import url(./layout/content.css);
+@import url(./layout/header.css);
+@import url(./layout/navbar.css);
+@import url(./components/icon.css);
+@import url(./components/toast.css);
+@import url(../assetsAdmin/font/fontawesome-5.15.1/css/all.min.css);
+/*@import url(../assetsAdmin/font/fontawesome-5.15.1/jsAdmin/all.min.js);*/
+@import url(./components/table.css);
+@import url(./components/paging.css);
+@import url(./components/dialog.css);
+@import url(./components/form.css);
+
+body{
+    margin: 0px;
+    font-family: RobotoRegular;
+    font-size: 13px;
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url("../assetsAdmin/font/Roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url("../assetsAdmin/font/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url("../assetsAdmin/font/Roboto/Roboto-Regular.ttf");
+}
+
+.main{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 56px);
+}
+
+.require{
+    color: #E81E1E;
+}

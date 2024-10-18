@@ -6,6 +6,7 @@ using DataAccess.Repository.Interfaces;
 using DataAccess.Repository.Services;
 using EShopAPI;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -13,7 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddOData(
+    option => option.Select().Filter().Count().OrderBy().SetMaxTop(20).Expand());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -30,7 +32,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireLowercase = false;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
-    options.Password.RequiredLength = 6;
+    options.Password.RequiredLength = 1;
 
     // setting for logout
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
@@ -43,14 +45,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("CorsPolicy", build => build.AllowAnyMethod()
-        .AllowAnyHeader()
-        .AllowCredentials()
-        .SetIsOriginAllowed(hostName => true)
-        .Build());
-});
+builder.Services.AddCors();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
@@ -71,6 +66,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+});
 
 app.UseAuthorization();
 

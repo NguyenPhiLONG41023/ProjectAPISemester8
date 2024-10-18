@@ -12,12 +12,10 @@ namespace DataAccess.Repository.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User> Login(LoginVM model);
-        Task<User> Register(RegisterVM model);
-        Task<IEnumerable<User>> GetMembers();
-        Task<User> GetMemberByID(string id);
-        Task<User> GetMemberByEmailAndPass(string email, string password);
-        Task InsertMember(User member);
-        Task UpdateMember(User member);
+        Task<UserVM> Login(LoginVM model);
+        Task<UserVM> Register(RegisterVM model);
+        Task<IEnumerable<UserVM>> GetUsers();
+        Task<UserVM> GetUserByID(string id);
+        Task<UserVM> UpdateUser(UserUpdateVM model);
     }
 }

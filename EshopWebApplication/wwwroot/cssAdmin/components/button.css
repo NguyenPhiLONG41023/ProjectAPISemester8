@@ -1,0 +1,167 @@
+.m-btn {
+    /*height: 36px;*/
+    padding: 10px 19px;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: RobotoMedium;
+    cursor: pointer;
+    background-color: #089740;
+    color: #fff;
+}
+
+.m-a-delete {
+    /*height: 36px;*/
+    padding: 10px 19px;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: RobotoMedium;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+}
+
+.m-btn-delete:hover {
+    background-color: #F06666;
+}
+
+.m-btn-delete:active {
+    background-color: #8A0000;
+}
+
+.m-btn:hover{
+    background-color: #6BC18D;
+}
+
+.m-btn:active{
+    background-color: #055B27;
+}
+
+.m-btn-icon{
+    background-position: 9px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 33px;
+    padding-right: 20px;
+}
+
+.m-btn-icon-add{
+    background-color: #089740;
+    color: #fff;
+    background-image: url(../../assetsAdmin/icon/add.png);
+}
+
+#btnClose{
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-image: url(../../assetsAdmin/icon/x.svg);
+    background-color: #FFFFFF;
+}
+
+#btnClose:hover{
+    background-color: #BDBDBD;
+}
+
+#btnCloseDialog{
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-image: url(../../assetsAdmin/icon/x.svg);
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+#btnCloseDialog:hover{
+    background-color: #BDBDBD;
+}
+
+#btnCancel{
+    background-color: #FFFFFF;
+    color: #212121;
+    margin: 4px;
+    width: 80px;
+    cursor: pointer;
+}
+
+#btnSave{
+    background-color: #089740;
+    color: #fff;
+    margin-left: 8px;
+    width: 80px;
+    cursor: pointer;
+}
+
+#btnDownload{
+    margin-right: 2px;
+    width: 36px;
+    height: 36px;
+    background-image: url(../../assetsAdmin//icon/refresh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+    border: 1px solid #EEEFF1;
+    cursor: pointer;
+}
+
+#btnRefresh{
+    width: 36px;
+    height: 36px;
+    background-image: url(../../assetsAdmin//icon/refresh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+
+#prev-page{ 
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+}
+
+#prev-page:hover{ 
+    background-color: red;
+}
+
+#next-page{ 
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+}
+
+#next-page:hover{ 
+    background-color: red;
+}
+
+#btnDeleteAll{
+    height: 36px;
+    font-family: RobotoMedium;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: #F5F5F5;
+}
+
+#btnDeleteAll:active{
+    background-color: #EEEEEE;
+}
+
+#btnDongY{
+    float: right;
+    background-color: #089740;
+    color: #fff;
+    font-family: RobotoRegular;
+    font-weight: 400;
+}

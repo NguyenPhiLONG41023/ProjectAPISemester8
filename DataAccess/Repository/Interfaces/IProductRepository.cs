@@ -1,5 +1,6 @@
 ﻿using BusinessObject.Models;
 using BusinessObject.ResourceModel.ViewModel;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace DataAccess.Repository.Interfaces
         void UpdateProduct(Guid id, ProductAddVM product);
         void DeleteProduct(Guid proID);
         List<ProductVM> SearchProduct(string search, decimal? priceFrom, decimal? priceTo);
+        IEnumerable<Product> ImportProduct(IFormFile fileImport);
     }
 }

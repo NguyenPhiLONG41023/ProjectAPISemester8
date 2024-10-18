@@ -1,0 +1,85 @@
+.navbarc {
+    width: 200px;
+    height: calc(100vh - 56px);
+    background-color: #041434;
+    flex-shrink: 0;
+    padding-top: 18px;
+    box-sizing: border-box;
+    position: fixed;
+    margin-top: 56px
+}
+
+.navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu-item{
+    margin: 2px auto;
+    display: flex;
+    height: 44px;
+    width: 176px;
+    background-color: #041434;
+    border-radius: 4px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.menu-item:hover{
+    background-color: #A7C4FF;
+    cursor: pointer;
+}
+
+.menu-icon{
+    height: 24px;
+    width: 24px;
+    margin: 0 12px;
+    flex-shrink: 0;
+}
+
+.menu-item .menu-text{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: RobotoMedium;
+}
+
+.menu-collapse{
+    position: absolute;
+    bottom: 0;
+    color: #FFFFFF;
+    height: 44px;
+    width: 100%;
+    border-top: 1px solid #213553;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.menu-collapse:hover{
+    /* background-color: #A7C4FF; */
+    background-color: rgba(167, 196, 255, 0.16);
+    cursor: pointer;
+}
+
+.collaspe-icon{
+    background-image: url(../../assetsAdmin/icon/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -1365px -356px; 
+}
+
+.collaspe-text{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: RobotoMedium;
+}
+
+a {
+    text-decoration: none;
+}

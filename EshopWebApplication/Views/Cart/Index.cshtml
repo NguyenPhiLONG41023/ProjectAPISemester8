@@ -1,0 +1,126 @@
+﻿
+<!-- NAVIGATION -->
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="http://localhost:5223/Home">Home</a></li>
+                <li><a href="http://localhost:5223/Product">Product</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<!-- /NAVIGATION -->
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="breadcrumb-header">Your cart</h3>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- Order Details -->
+            <div class="col-md-8 order-details">
+                <h3 class="title" style="text-align: center">Your Order</h3>
+                <div class="order-summary" style="margin-top: 20px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <table border="1" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 12px 15px; text-align: center; background-color: #f8f8f8; color: #333; font-weight: bold; border-bottom: 2px solid #ddd;">Name</th>
+                                <th style="padding: 12px 15px; text-align: center; background-color: #f8f8f8; color: #333; font-weight: bold; border-bottom: 2px solid #ddd;">Quantity</th>
+                                <th style="padding: 12px 15px; text-align: center; background-color: #f8f8f8; color: #333; font-weight: bold; border-bottom: 2px solid #ddd;">Price</th>
+                                <th style="padding: 12px 15px; text-align: center; background-color: #f8f8f8; color: #333; font-weight: bold; border-bottom: 2px solid #ddd;">Total</th>
+                                <th style="padding: 12px 15px; text-align: center; background-color: #f8f8f8; color: #333; font-weight: bold; border-bottom: 2px solid #ddd;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model?.Lines)
+                            {
+                                <tr style="border-bottom: 1px solid #ddd; background-color: @((Model.Lines.IndexOf(p) % 2 == 0) ? "#f9f9f9" : "white");">
+                                    <td style="padding: 12px 15px; text-align: center;">@p.Product.ProductName</td>
+                                    <td style="padding: 12px 15px; text-align: center;">@p.Quantity</td>
+                                    <td style="padding: 12px 15px; text-align: center;">@p.Product.Price.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
+                                    <td style="padding: 12px 15px; text-align: center;">
+                                        @(p.Product.Price * p.Quantity)
+                                    </td>
+                                    <td style="padding: 12px 15px; text-align: center;">
+                                        <a href="Cart/RemoveFromCart?productId=@p.Product.ProductId">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="order-col" style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 2px solid #ddd;">
+                        <div>Shipping</div>
+                        <div><strong>FREE</strong></div>
+                    </div>
+                    <div class="order-col" style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 2px solid #ddd;">
+                        <div><strong>TOTAL</strong></div>
+                        <div><strong class="order-total" style="font-size: 1.2em; color: #333;">@Model.ComputeTotalValue().ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</strong></div>
+                    </div>
+                </div>
+                <a href="Cart/Checkout" class="primary-btn order-submit" style="margin-top: 20px; padding: 10px 20px; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer; text-align: center; text-decoration: none; transition: background-color 0.3s;">Check out</a>
+            </div>
+            <!-- /Order Details -->
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="newsletter">
+                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                    <form>
+                        <input class="input" type="email" placeholder="Enter Your Email">
+                        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                    </form>
+                    <ul class="newsletter-follow">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /NEWSLETTER -->

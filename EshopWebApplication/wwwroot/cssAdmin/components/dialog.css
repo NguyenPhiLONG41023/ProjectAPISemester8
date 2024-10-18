@@ -1,0 +1,74 @@
+@import url(./button.css);
+.m-dialog{
+    z-index: 11;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.436);
+}
+
+#dlgDialog{
+    display: none;
+}
+
+.m-dialog-content{
+    position: absolute;
+    width: 352px;
+    height: 143px;
+    background-color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-dialog-content .m-dialog-header{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.m-dialog-content .m-dialog-header .header-content{
+    font-family: RobotoBold;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1F1F1F;
+}
+
+
+
+.m-dialog-content .m-dialog-body{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.m-dialog-content .m-dialog-body .body-icon{
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    background-color: red;
+}
+
+.m-dialog-content .m-dialog-body .body-text{
+    font-family: RobotoRegular;
+    font-weight: 400;
+    font-size: 14px;
+    height: 37px;
+    display: flex;
+    padding-left: 20px;
+    flex-direction: column;
+}
+
+.m-dialog-content .m-dialog-footer{
+    width: 100%;
+    height: 36px;
+}
+

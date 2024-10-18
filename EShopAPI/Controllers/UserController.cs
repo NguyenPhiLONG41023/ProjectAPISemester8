@@ -13,12 +13,10 @@ namespace EShopAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
 
         public UserController(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
-            _mapper = mapper;
         }
 
         [HttpPost("login")]
@@ -55,24 +53,24 @@ namespace EShopAPI.Controllers
             return Ok(user);
         }
 
-        //[HttpGet("members")]
-        //public async Task<IActionResult> GetMembers()
-        //{
-        //    var users = await _userRepository.GetMembers();
-        //    return Ok(users);
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetUser()
+        {
+            var users = await _userRepository.GetUsers();
+            return Ok(users);
+        }
 
-        //[HttpGet("member/{id}")]
-        //public async Task<IActionResult> GetMemberByID(string id)
-        //{
-        //    var user = await _userRepository.GetMemberByID(id);
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByID(string id)
+        {
+            var user = await _userRepository.GetUserByID(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
 
-        //    return Ok(user);
-        //}
+            return Ok(user);
+        }
 
         //[HttpGet("member")]
         //public async Task<IActionResult> GetMemberByEmailAndPass([FromQuery] string email, [FromQuery] string password)
@@ -86,28 +84,19 @@ namespace EShopAPI.Controllers
         //    return Ok(user);
         //}
 
-        //[HttpPost("insert")]
-        //public async Task<IActionResult> InsertMember([FromBody] User member)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    await _userRepository.InsertMember(member);
-        //    return Ok();
-        //}
-
-        //[HttpPut("update")]
-        //public async Task<IActionResult> UpdateMember([FromBody] User member)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    await _userRepository.UpdateMember(member);
-        //    return Ok();
-        //}
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateUser([FromBody] UserUpdateVM user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var updatedUser = await _userRepository.UpdateUser(user);
+            if (updatedUser == null)
+            {
+                return BadRequest();
+            }
+            return Ok(updatedUser);
+        }
     }
 }

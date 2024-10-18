@@ -1,0 +1,197 @@
+﻿@model IEnumerable<BusinessObject.ResourceModel.ViewModel.User.UserVM>
+@{
+    Layout = null;
+    ViewData["Title"] = "Admin Manage User";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/cssAdmin/main.css">
+    <link rel="stylesheet" href="~/cssAdmin/page/employee.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header__left">
+            <a class="navbar-brand" href="/Home">EShopAdmin</a>
+        </div>
+        @* @if (HttpContext.Session.GetString("user") != null)
+        {
+            <div style="display: flex; margin-left: auto; align-items: center">
+                <a class="navbar-brand" asp-page="/Auth/Login" asp-page-handler="Logout">Logout</a>
+            </div>
+        } *@
+    </div>
+    <div class="main">
+        <!-- Nabvar -->
+        <div class="navbarc">
+            <div class="menu-item" data-href="/Admin">
+                <div class="menu-icon m-icon m-icon-khachhang"></div>
+                <div class="menu-text"><a>Manage user</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Product">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage product</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Order">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage order</a></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="m-page-header">
+                <div class="m-page-header__title">Manage User</div>
+            </div>
+
+            <div class="m-page-table">
+                <div class="m-page-grid">
+                    <div id="table-wrapper">
+                        <div id="table-scroll">
+                            <table class="m-table">
+                                <thead>
+                                    <tr>
+                                        <th>UserId</th>
+                                        <th>UserName</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Role</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var u in Model)
+                                    {
+                                        <tr>
+                                            <td>@u.UserId</td>
+                                            <td>@u.UserName</td>
+                                            <td>@u.Email</td>
+                                            <td>@u.PhoneNumber</td>
+                                            <td>@u.RoleName</td>
+                                            <td><button class="m-btn edit-btn" onclick="editUser('@u.UserId', '@u.UserName', '@u.Email', '@u.PhoneNumber', '@u.RoleId')">Edit</button></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                @* <div class="m-paging">
+                    <div class="m-paging__left">Tổng: @listUsers.Count</div>
+                </div> *@
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup form -->
+    <div id="dlgDetail" mdialog class="m-form" style="display: none;">
+        <div class="m-form__container">
+            <div class="m-form__header">
+                <div class="header-content">Edit user</div>
+                <div class="header-close">
+                    <a href="javascript:void(0);" onclick="closeForm()" style="color: red;font-weight: bold">X</a>
+                </div>
+            </div>
+            <div class="m-form__body">
+                <form id="editForm" method="post" asp-area="Admin" asp-controller="Home" asp-action="Edit">
+                    <div class="m-form__row">
+                        <div class="form__row-grid" style="grid-template-columns: calc(45% - 4px) calc(55% - 4px);">
+                            <div class="input-component">
+                                <label class="m-form__label">User Id</label>
+                                <input type="text" class="m-form__input" id="UserId" name="UserId" readonly>
+                            </div>
+                            <div class="input-component">
+                                <label class="m-form__label">Name</label>
+                                <input type="text" class="m-form__input" id="UserName" name="UserName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="input-component">
+                            <label class="m-form__label">Phone</label>
+                            <input type="text" class="m-form__input" id="PhoneNumber" name="PhoneNumber">
+                        </div>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="input-component">
+                            <label title="Email" class="m-form__label">Email</label>
+                            <input type="email" id="Email" class="m-form__input" name="Email" required>
+                        </div>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="form__row-grid">
+                            <div class="input-component">
+                                <label class="m-form__label">Role</label>
+                                <select class="m-form__input" id="RoleName" name="RoleId" class="form-control">
+                                    <option value="5b80254c-b1bc-4297-8886-d5b99fce95a6">User</option>
+                                    <option value="b8884927-b566-442d-b0af-facc07bbbdfc">Admin</option>
+                                </select>
+                            </div>
+                            @* <div class="input-component">
+                                <label class="m-form__label">Status</label>
+                                <select class="m-form__input" id="Status" name="Status" class="form-control">
+                                    <option value="1">Active</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </div> *@
+                        </div>
+                    </div>
+                    <div class="m-form__footer">
+                        <button type="submit" class="m-btn edit-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jsAdmin/jquery-3.7.1.min.js"></script>
+    <script src="../jsAdmin/employee.js"></script>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                window.location.href = item.getAttribute('data-href');
+            });
+        });
+
+        function editUser(userId, userName, email, phoneNumber, roleId) {
+            document.getElementById("dlgDetail").style.display = "block";
+            document.getElementById("UserId").value = userId;
+            document.getElementById("UserName").value = userName;
+            document.getElementById("Email").value = email;
+            document.getElementById("PhoneNumber").value = phoneNumber;
+            document.getElementById("RoleName").value = roleId;
+        }
+
+        function closeForm() {
+            $('#dlgDetail').hide();
+        }
+
+        function loadRoles(selectedBrandId) {
+            $.ajax({
+                url: 'http://localhost:5191/api/Brand', // URL đến API Brand
+                method: 'GET',
+                success: function (data) {
+                    var brandDropdown = $('#BrandName');
+                    brandDropdown.empty();
+                    $.each(data, function (index, brand) {
+                        var selected = brand.brandId == selectedBrandId ? 'selected' : ''; // Chọn brandId tương ứng
+                        brandDropdown.append('<option value="' + brand.brandId + '" ' + selected + '>' + brand.brandName + '</option>');
+                    });
+                },
+                error: function () {
+                    alert('Failed to load brands.');
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
+

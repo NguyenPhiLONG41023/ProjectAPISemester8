@@ -2,6 +2,7 @@
 using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace EShopAPI.Controllers
 {
@@ -15,9 +16,10 @@ namespace EShopAPI.Controllers
             _repository = repository;
         }
         [HttpGet("GetOrderDetailsListByOrderID")]
+        [EnableQuery]
         public IActionResult GetOrderDetailByOrderId(Guid id) 
         {
-            var orderdetails = _repository.GetOrderDetailsListByOrderID(id);
+            var orderdetails = _repository.GetOrderDetailsListByOrderID(id).AsQueryable();
             if (orderdetails == null)
             {
                 return NotFound();

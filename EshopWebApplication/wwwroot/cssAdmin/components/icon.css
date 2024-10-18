@@ -1,0 +1,30 @@
+.m-icon{
+    background-image: url(../../assetsAdmin/icon/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+}
+
+.m-icon-search{
+    background-image: url(../../assetsAdmin/icon/search.png);
+}
+
+.m-icon-khachhang{
+    background-position: -26px -1587px; 
+}
+
+.m-icon-caidat{
+    background-position: -26px -1587px; 
+}
+
+.m-icon-baocao{
+    background-position: -26px -1587px; 
+}
+
+.m-icon-trangchu{
+    background-position: -26px -1587px; 
+}
+
+.m-icon-avatar{
+    background-image: url(../../assetsAdmin/icon/avatar-default.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

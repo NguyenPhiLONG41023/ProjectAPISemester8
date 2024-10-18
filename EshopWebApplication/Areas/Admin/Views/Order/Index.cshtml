@@ -1,0 +1,190 @@
+﻿@model IEnumerable<BusinessObject.ResourceModel.ViewModel.OrderVM>
+@{
+    Layout = null;
+    ViewData["Title"] = "Admin Manage User";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/cssAdmin/main.css">
+    <link rel="stylesheet" href="~/cssAdmin/page/employee.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header__left">
+            <a class="navbar-brand" href="/Home">EShopAdmin</a>
+        </div>
+        @* @if (HttpContext.Session.GetString("user") != null)
+        {
+            <div style="display: flex; margin-left: auto; align-items: center">
+                <a class="navbar-brand" asp-page="/Auth/Login" asp-page-handler="Logout">Logout</a>
+            </div>
+        } *@
+    </div>
+    <div class="main">
+        <!-- Nabvar -->
+        <div class="navbarc">
+            <div class="menu-item" data-href="/Admin">
+                <div class="menu-icon m-icon m-icon-khachhang"></div>
+                <div class="menu-text"><a>Manage user</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Product">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage product</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Order">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage order</a></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="m-page-header">
+                <div class="m-page-header__title">Manage User</div>
+            </div>
+            <form asp-controller="Order" asp-action="Index" method="get">
+                StartDate<input type="datetime-local" name="startDate" />
+                EndDate<input type="datetime-local" name="endDate" />
+                <input type="submit" value="Search" />
+            </form>
+            <div class="m-page-table">
+                <div class="m-page-grid">
+                    <div id="table-wrapper">
+                        <div id="table-scroll">
+                            <table class="m-table">
+                                <thead>
+                                    <tr>
+                                        <th>OrderId</th>
+                                        <th>UserId</th>
+                                        <th>OrderDate</th>
+                                        <th>TotalPrice</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var u in Model)
+                                    {
+                                        <tr>
+                                            <td>@u.OrderId</td>
+                                            <td>@u.UserId</td>
+                                            <td>@u.OrderDate</td>
+                                            <td>@u.TotalPrice</td>
+                                            @if (u.Status == "0")
+                                            {
+                                                <td>Pending</td>
+                                            }
+                                            else if (u.Status == "1")
+                                            {
+                                                <td>Shipping</td>
+                                            }
+                                            else if (u.Status == "2")
+                                            {
+                                                <td>Done</td>
+                                            }
+                                            <td>
+                                                <button class="m-btn edit-btn" onclick="editOrder('@u.OrderId', '@u.UserId', '@u.OrderDate', '@u.TotalPrice', '@u.Status')">Edit</button>
+                                                <a asp-action="Details" asp-route-id="@u.OrderId">Details</a>
+                                            </td>
+                                            
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                @* <div class="m-paging">
+                    <div class="m-paging__left">Tổng: @listUsers.Count</div>
+                </div> *@
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup form -->
+    <div id="dlgDetail" mdialog class="m-form" style="display: none;">
+        <div class="m-form__container">
+            <div class="m-form__header">
+                <div class="header-content">Edit user</div>
+                <div class="header-close">
+                    <a href="javascript:void(0);" onclick="closeForm()" style="color: red;font-weight: bold">X</a>
+                </div>
+            </div>
+            <div class="m-form__body">
+                <form id="editForm" method="post" asp-area="Admin" asp-controller="Order" asp-action="Edit">
+                    
+                    <div class="m-form__row">
+                        <div class="form__row-grid" style="grid-template-columns: calc(45% - 4px) calc(55% - 4px);">
+                            <div class="input-component">
+                                <label class="m-form__label">Order Id</label>
+                                <input type="text" class="m-form__input" id="OrderId" name="OrderId" readonly>
+                            </div>
+                            <div class="input-component">
+                                <label class="m-form__label">User Id</label>
+                                <input type="text" class="m-form__input" id="UserId" name="UserId" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="date" class="m-form__input" id="OrderDate" name="OrderDate" readonly>
+                    <div class="m-form__row">
+                        <div class="input-component">
+                            <label title="Email" class="m-form__label">Total price</label>
+                            <input type="text" id="TotalPrice" class="m-form__input" name="TotalPrice" readonly>
+                        </div>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="form__row-grid">
+                            <div class="input-component">
+                                <label class="m-form__label">Status</label>
+                                <select class="m-form__input" id="Status" name="Status" class="form-control">
+                                    <option value="0">Pending</option>
+                                    <option value="1">Shipping</option>
+                                    <option value="2">Done</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__footer">
+                        <button type="submit" class="m-btn edit-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jsAdmin/jquery-3.7.1.min.js"></script>
+    <script src="../jsAdmin/employee.js"></script>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                window.location.href = item.getAttribute('data-href');
+            });
+        });
+
+        function editOrder(orderId, userId, orderDate, TotalPrice, Status) {
+            document.getElementById("dlgDetail").style.display = "block";
+            document.getElementById("OrderId").value = orderId;
+            document.getElementById("UserId").value = userId;
+            var date = new Date(orderDate);
+            var formattedDate = date.toISOString().split('T')[0];
+            document.getElementById("OrderDate").value = formattedDate;
+            document.getElementById("TotalPrice").value = TotalPrice;
+            document.getElementById("Status").value = Status;
+        }
+
+        function closeForm() {
+            $('#dlgDetail').hide();
+        }
+    </script>
+
+</body>
+
+</html>
+

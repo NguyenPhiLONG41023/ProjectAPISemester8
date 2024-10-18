@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using AutoMapper.Execution;
 using BusinessObject.Models;
 using BusinessObject.ResourceModel.Common;
+using BusinessObject.ResourceModel.ViewModel;
 using BusinessObject.ResourceModel.ViewModel.User;
 using DataAccess.DataAccess;
 using DataAccess.Repository.Interfaces;
@@ -38,7 +40,7 @@ namespace DataAccess.Repository.Services
             _mapper = mapper;
         }
 
-        public async Task<User> Login(LoginVM model)
+        public async Task<UserVM> Login(LoginVM model)
         {
             var user = await _userManager.FindByNameAsync(model.UserName);
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
@@ -63,10 +65,10 @@ namespace DataAccess.Repository.Services
                     return null;
                 }
             }
-            return user;
+            return await GetUserByID(user.Id);
         }
 
-        public async Task<User> Register(RegisterVM model)
+        public async Task<UserVM> Register(RegisterVM model)
         {
             var userExistMail = await _userManager.FindByEmailAsync(model.Email);
             var userExistName = await _userManager.FindByNameAsync(model.Username);
@@ -89,39 +91,69 @@ namespace DataAccess.Repository.Services
             }
 
             await _userManager.AddToRoleAsync(user, "User");
-            return user;
+            return await GetUserByID(user.Id);
         }
 
-        public async Task<IEnumerable<User>> GetMembers()
+        public async Task<IEnumerable<UserVM>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
-        }
+            var users = await _userManager.Users.ToListAsync();
+            var userVMs = new List<UserVM>();
 
-        public async Task<User> GetMemberByID(string id)
-        {
-            return await _context.Users.FindAsync(id);
-        }
-
-        public async Task<User> GetMemberByEmailAndPass(string email, string password)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(m => m.Email == email);
-            if (user != null && await _userManager.CheckPasswordAsync(user, password))
+            foreach (var user in users)
             {
-                return user;
+                var userVM = _mapper.Map<UserVM>(user);
+                var roles = await _userManager.GetRolesAsync(user);
+                if (roles.Any())
+                {
+                    userVM.RoleName = roles.First(); // Giả sử mỗi user chỉ có một vai trò
+                    var role = await _roleManager.FindByNameAsync(userVM.RoleName);
+                    userVM.RoleId = role?.Id;
+                }
+                userVMs.Add(userVM);
             }
-            return null;
+
+            return userVMs;
         }
 
-        public async Task InsertMember(User member)
+        public async Task<UserVM> GetUserByID(string id)
         {
-            await _context.Users.AddAsync(member);
-            await _context.SaveChangesAsync();
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return null;
+
+            var userVM = _mapper.Map<UserVM>(user);
+            var roles = await _userManager.GetRolesAsync(user);
+            if (roles.Any())
+            {
+                userVM.RoleName = roles.First(); // Giả sử mỗi user chỉ có một vai trò
+                var role = await _roleManager.FindByNameAsync(userVM.RoleName);
+                userVM.RoleId = role?.Id;
+            }
+
+            return userVM;
         }
 
-        public async Task UpdateMember(User member)
+        public async Task<UserVM> UpdateUser(UserUpdateVM model)
         {
-            _context.Users.Update(member);
-            await _context.SaveChangesAsync();
+            var user = await _userManager.FindByIdAsync(model.UserId);
+            if (user == null) return null;
+
+            user.UserName = model.UserName;
+            user.Email = model.Email;
+            user.PhoneNumber = model.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded) return null;
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            var newRole = await _roleManager.FindByIdAsync(model.RoleId);
+            if (newRole != null && !currentRoles.Contains(newRole.Name))
+            {
+                await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                await _userManager.AddToRoleAsync(user, newRole.Name);
+            }
+
+            return await GetUserByID(user.Id);
         }
     }
 }

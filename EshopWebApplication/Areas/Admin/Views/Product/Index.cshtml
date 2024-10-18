@@ -1,0 +1,386 @@
+﻿@model IEnumerable<BusinessObject.ResourceModel.ViewModel.ProductVM>
+@{
+    Layout = null;
+    ViewData["Title"] = "Admin Manage Product";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/cssAdmin/main.css">
+    <link rel="stylesheet" href="~/cssAdmin/page/employee.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header__left">
+            <a class="navbar-brand" href="/Home">EShopAdmin</a>
+        </div>
+        @* @if (HttpContext.Session.GetString("user") != null)
+        {
+            <div style="display: flex; margin-left: auto; align-items: center">
+                <a class="navbar-brand" asp-page="/Auth/Login" asp-page-handler="Logout">Logout</a>
+            </div>
+        } *@
+    </div>
+    <div class="main">
+        <!-- Nabvar -->
+        <div class="navbarc">
+            <div class="menu-item" data-href="/Admin">
+                <div class="menu-icon m-icon m-icon-khachhang"></div>
+                <div class="menu-text"><a>Manage user</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Product">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage product</a></div>
+            </div>
+            <div class="menu-item" data-href="/Admin/Order">
+                <div class="menu-icon m-icon m-icon-trangchu"></div>
+                <div class="menu-text"><a>Manage order</a></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="m-page-header">
+                <div class="m-page-header__title">Manage Product</div>
+                <div class="m-page-header__button">
+                    <button id="btnAdd" class="m-btn m-btn-icon m-btn-icon-add" onclick="addProduct()">Thêm mới</button>
+                </div>
+                <div class="m-page-header__button" style="margin-right: 130px">
+                    <button id="btnImport" class="m-btn m-btn-icon m-btn-icon-add" onclick="importExcelProduct()">Nhập excel</button>
+                </div>
+            </div>
+
+            <div class="m-page-table">
+                <div class="m-page-grid">
+                    <div id="table-wrapper">
+                        <div id="table-scroll">
+                            <table class="m-table">
+                                <thead>
+                                    <tr>
+                                        <th>ProductId</th>
+                                        <th>Brand</th>
+                                        <th>ProductName</th>
+                                        <th>Quantity</th>
+                                        <th>Desc</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var u in Model)
+                                    {
+                                        <tr>
+                                            <td>@u.ProductId</td>
+                                            <td>@u.BrandName</td>
+                                            <td>@u.ProductName</td>
+                                            <td>@u.Quantity</td>
+                                            @if (u.Description != null && u.Description.Length > 100)
+                                            {
+                                                <td>@u.Description.Substring(0, 200)...</td>
+                                            }
+                                            else
+                                                {
+                                                <td>@u.Description</td>
+                                            }
+                                            <td>@u.Price</td>
+                                            @if (u.Status == 1)
+                                            {
+                                                <td style="color: green">Active</td>
+                                            }
+                                            else if (u.Status == 0)
+                                            {
+                                                <td style="color: red">Disabled</td>
+                                            }
+                                            <td><button class="m-btn edit-btn" onclick="editProduct('@u.ProductId', '@u.BrandId', '@u.BrandName', '@u.ProductName', '@u.Quantity', '@u.Description', '@u.Price', '@u.Image', '@u.Status')">Edit</button></td>
+                                            <td>
+                                                <button class="m-btn edit-btn" onclick="deleteProduct('@u.ProductId')">Delete</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                @* <div class="m-paging">
+                    <div class="m-paging__left" id="productCount" data-count="@Model.Count">Tổng: @Model.Count</div>
+                </div> *@
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup form edit -->
+    <div id="dlgEditProduct" mdialog class="m-form" style="display: none;">
+        <div class="m-form__container" style="width: 888px">
+            <div class="m-form__header">
+                <div class="header-content">Edit Product</div>
+                <div class="header-close">
+                    <a href="javascript:void(0);" onclick="closeForm()" style="color: red;font-weight: bold">X</a>
+                </div>
+            </div>
+            <div class="m-form__body">
+                <form id="editForm" method="post" asp-area="Admin" asp-controller="Product" asp-action="Edit">
+                    <div class="m-form__row" style="display: flex">
+                        <div class="form__row-left">
+                            <div class="form__row-grid" style="grid-template-columns: calc(40% - 4px) calc(60% - 4px);">
+                                <div class="input-component">
+                                    <labeln class="m-form__label">ProductId</label>
+                                    <input type="text" name="ProductId" id="ProductId" class="m-form__input" readonly>
+                                </div>
+                                <div class="input-component">
+                                    <label class="m-form__label">ProductName</label>
+                                    <input type="text" name="ProductName" id="ProductName" class="m-form__input" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__row-right">
+                            <div class="form__row-grid">
+                                <div class="input-component">
+                                    <label class="m-form__label">
+                                        Quantity
+                                    </label>
+                                    <input type="text" name="Quantity" id="Quantity" class="m-form__input--date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__row" style="display: flex">
+                        <div class="form__row-left">
+                            <label class="m-form__label">
+                                Price
+                            </label>
+                            <input type="text" name="Price" id="Price" class="m-form__input">
+                        </div>
+                        <div class="form__row-right">
+                            <label class="m-form__label">
+                                Image
+                            </label>
+                            <input type="text" name="Image" id="Image" class="m-form__input">
+                        </div>
+                    </div>
+                    <div class="m-form__row" style="display: block;">
+                        <label title="Công ty" class="m-form__label">
+                            Description
+                        </label>
+                        <textarea id="Description" name="Description" class="m-form__input" rows="4" style="width: 100%; height: 140px"></textarea>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="form__row-grid">
+                            <div class="input-component">
+                                <label class="m-form__label">BrandName</label>
+                                <select class="m-form__input" id="BrandName" name="BrandId" class="form-control">
+                                </select>
+                            </div>
+                            <div class="input-component">
+                                <label class="m-form__label">Status</label>
+                                <select class="m-form__input" id="Status" name="Status" class="form-control">
+                                    <option value="1">Active</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__footer">
+                        <button type="submit" class="m-btn edit-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup form add -->
+    <div id="dlgAddProduct" mdialog class="m-form" style="display: none;">
+        <div class="m-form__container" style="width: 888px">
+            <div class="m-form__header">
+                <div class="header-content">Add Product</div>
+                <div class="header-close">
+                    <a href="javascript:void(0);" onclick="closeForm()" style="color: red;font-weight: bold">X</a>
+                </div>
+            </div>
+            <div class="m-form__body">
+                <form id="editForm" method="post" asp-area="Admin" asp-controller="Product" asp-action="Create">
+                    <div class="m-form__row" style="display: flex">
+                        <div class="form__row-left">
+                            <div class="form__row-grid" style="grid-template-columns: calc(40% - 4px) calc(60% - 4px);">
+                                <div class="input-component">
+                                    <labeln class="m-form__label">
+                                        ProductId</label>
+                                        <input type="text" name="ProductId" id="ProductId" class="m-form__input" readonly>
+                                </div>
+                                <div class="input-component">
+                                    <label class="m-form__label">ProductName</label>
+                                    <input type="text" name="ProductName" id="ProductName" class="m-form__input" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__row-right">
+                            <div class="form__row-grid">
+                                <div class="input-component">
+                                    <label class="m-form__label">
+                                        Quantity
+                                    </label>
+                                    <input type="text" name="Quantity" id="Quantity" class="m-form__input--date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__row" style="display: flex">
+                        <div class="form__row-left">
+                            <label class="m-form__label">
+                                Price
+                            </label>
+                            <input type="text" name="Price" id="Price" class="m-form__input">
+                        </div>
+                        <div class="form__row-right">
+                            <label class="m-form__label">
+                                Image
+                            </label>
+                            <input type="text" name="Image" id="Image" class="m-form__input">
+                        </div>
+                    </div>
+                    <div class="m-form__row" style="display: block;">
+                        <label title="Công ty" class="m-form__label">
+                            Description
+                        </label>
+                        <textarea id="Description" name="Description" class="m-form__input" rows="4" style="width: 100%; height: 140px"></textarea>
+                    </div>
+                    <div class="m-form__row">
+                        <div class="form__row-grid">
+                            <div class="input-component">
+                                <label class="m-form__label">BrandName</label>
+                                <select class="m-form__input" id="BrandAddForm" name="BrandId" class="form-control">
+                                </select>
+                            </div>
+                            <div class="input-component">
+                                <label class="m-form__label">Status</label>
+                                <select class="m-form__input" id="Status" name="Status" class="form-control">
+                                    <option value="1">Active</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-form__footer">
+                        <button type="submit" class="m-btn edit-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form import -->
+    <form id="importForm" method="post" enctype="multipart/form-data" asp-area="Admin" asp-controller="Product" asp-action="Import" style="display: none;">
+        <input type="file" id="fileInput" name="file" accept=".xlsx, .xls" style="display: none;" />
+    </form>
+
+    <script src="/jsAdmin/jquery-3.7.1.min.js"></script>
+    <script src="../jsAdmin/employee.js"></script>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                window.location.href = item.getAttribute('data-href');
+            });
+        });
+
+        function editProduct(productid, brandid, brandname, productName, quantity, description, price, image, status) {
+            // console.log(productid, brandid, brandname, productName, quantity, description, price, image, status);
+            document.getElementById("dlgEditProduct").style.display = "block";
+            document.getElementById("ProductId").value = productid;
+            document.getElementById("BrandName").value = brandname;
+            document.getElementById("ProductName").value = productName;
+            document.getElementById("Quantity").value = quantity;
+            document.getElementById("Description").value = description;
+            document.getElementById("Price").value = price;
+            document.getElementById("Image").value = image;
+            document.getElementById("Status").value = status;
+            loadBrands(brandid);
+        }
+
+        function addProduct() {
+            document.getElementById("dlgAddProduct").style.display = "block";
+            console.log("add product");
+            $.ajax({
+                url: 'http://localhost:5191/api/Brand', // URL đến API Brand
+                method: 'GET',
+                success: function (data) {
+                    var brandDropdown = $('#BrandAddForm');
+                    brandDropdown.empty();
+                    $.each(data, function (index, brand) {
+                        brandDropdown.append('<option value="' + brand.brandId + '">' + brand.brandName + '</option>');
+                        console.log("add product2");
+                    });
+                },
+                error: function () {
+                    alert('Failed to load brands.');
+                }
+            });
+        }
+
+        function closeForm() {
+            $('#dlgEditProduct').hide();
+            $('#dlgAddProduct').hide();
+        }
+
+        //dropdownlist for brand
+        function loadBrands(selectedBrandId) {
+            $.ajax({
+                url: 'http://localhost:5191/api/Brand', // URL đến API Brand
+                method: 'GET',
+                success: function (data) {
+                    var brandDropdown = $('#BrandName');
+                    brandDropdown.empty();
+                    $.each(data, function (index, brand) {
+                        var selected = brand.brandId == selectedBrandId ? 'selected' : ''; // Chọn brandId tương ứng
+                        brandDropdown.append('<option value="' + brand.brandId + '" ' + selected + '>' + brand.brandName + '</option>');
+                    });
+                },
+                error: function () {
+                    alert('Failed to load brands.');
+                }
+            });
+        }
+
+        function importExcelProduct() {
+            document.getElementById('fileInput').click();
+        }
+
+        document.getElementById('fileInput').addEventListener('change', function () {
+            if (this.files.length > 0) {
+                if (confirm('Import this file?')) {
+                    document.getElementById('importForm').submit();
+                }
+            }
+        });
+
+        function deleteProduct(productId) {
+            if (confirm("Are you sure you want to delete this product?")) {
+                fetch(`http://localhost:5191/api/Product/${productId}`, {
+                    method: 'DELETE'
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("Product deleted successfully");
+                            window.location.reload();
+                        } else {
+                            alert("Failed to delete product");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("There was an error deleting the product:", error);
+                    });
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
+

@@ -16,6 +16,7 @@ namespace DataAccess.Configuration
             builder.ToTable("Product");
             builder.HasKey(x => x.ProductId);
             builder.Property(x => x.ProductName).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.Description).HasColumnType("Text"); //moi
             builder.Property(e => e.Price).HasColumnType("decimal(10, 2)");
             builder.HasOne(x => x.Brand).WithMany(x => x.Products).HasForeignKey(x => x.BrandId);
         }

@@ -6,6 +6,7 @@ using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.EntityFrameworkCore;
 
 namespace EShopAPI.Controllers
@@ -21,10 +22,10 @@ namespace EShopAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = $"{UserRole.Admin}, {UserRole.User}")]
+        [EnableQuery]
         public IActionResult GetProducts()
         {
-            var products = _repository.GetProductList();
+            var products = _repository.GetProductList().AsQueryable();
             if(products == null) return NotFound();
             return Ok(products);
         }
@@ -83,6 +84,20 @@ namespace EShopAPI.Controllers
                 return NotFound("No products found for the given search criteria.");
             }
             return Ok(products);
+        }
+
+        [HttpPost("import")]
+        public IActionResult Import(IFormFile fileImport)
+        {
+            try
+            {
+                var res = _repository.ImportProduct(fileImport);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
