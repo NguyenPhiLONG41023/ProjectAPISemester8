@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BusinessObject.Models;
+using BusinessObject.ResourceModel.ViewModel;
 using DataAccess.DataAccess;
 using DataAccess.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,18 +33,19 @@ namespace DataAccess.Repository.Services
         //    catch (Exception ex) { throw new Exception(ex.Message); }
         //}
 
-        public List<OrderDetail> GetOrderDetailsListByOrderID(Guid ordID)
+        public List<OrderDetailVM> GetOrderDetailsListByOrderID(Guid ordID)
         {
             var OrderDetails = new List<OrderDetail>();
             try
             {
-                OrderDetails = _context.OrderDetails.Where(pro => pro.OrderId == ordID).ToList();
+                OrderDetails = _context.OrderDetails.Include(p => p.Product)
+                    .Where(pro => pro.OrderId == ordID).ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return OrderDetails;
+            return _mapper.Map<List<OrderDetailVM>>(OrderDetails);
         }
 
         public decimal GetTotalPrice(Guid ordId)

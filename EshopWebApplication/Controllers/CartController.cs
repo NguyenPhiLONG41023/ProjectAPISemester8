@@ -70,7 +70,7 @@ namespace EshopWebApplication.Controllers
                 Cart.RemoveLine(product);
                 HttpContext.Session.SetJson("cart", Cart);
             }
-            return RedirectToAction("Index", "Product");
+            return RedirectToAction("Index", "Cart");
         }
 
         [Authorize]
