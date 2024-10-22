@@ -300,6 +300,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EShopAPI.Controllers.ProductController",
+    "Method": "SearchProductsByName",
+    "RelativePath": "api/Product/searchbyname",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EShopAPI.Controllers.UserController",
     "Method": "GetUser",
     "RelativePath": "api/User",

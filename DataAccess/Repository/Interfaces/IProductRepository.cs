@@ -17,6 +17,7 @@ namespace DataAccess.Repository.Interfaces
         void UpdateProduct(Guid id, ProductAddVM product);
         void DeleteProduct(Guid proID);
         List<ProductVM> SearchProduct(string search, decimal? priceFrom, decimal? priceTo);
+        List<ProductVM> SearchProductByName(string search);
         IEnumerable<Product> ImportProduct(IFormFile fileImport);
     }
 }

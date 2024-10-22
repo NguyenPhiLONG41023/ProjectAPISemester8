@@ -86,6 +86,18 @@ namespace EShopAPI.Controllers
             return Ok(products);
         }
 
+        [HttpGet("searchbyname")]
+        public IActionResult SearchProductsByName([FromQuery] string? search)
+        {
+            var products = _repository.SearchProductByName(search);
+
+            if (products == null || products.Count == 0)
+            {
+                return NotFound("No products found for the given search criteria.");
+            }
+            return Ok(products);
+        }
+
         [HttpPost("import")]
         public IActionResult Import(IFormFile fileImport)
         {

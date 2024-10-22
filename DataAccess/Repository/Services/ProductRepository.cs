@@ -188,5 +188,21 @@ namespace DataAccess.Repository.Services
                 throw new ArgumentException("The import file is not a valid .xlsx file.", nameof(fileImport));
             }
         }
+
+        public List<ProductVM> SearchProductByName(string search)
+        {
+            var products = new List<Product>();
+            try
+            {
+                products = _context.Products.Include(c => c.Brand)
+                    .Where(pro =>
+                        (string.IsNullOrEmpty(search) || pro.ProductName.Contains(search) || pro.ProductId.ToString() == search)).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return _mapper.Map<List<ProductVM>>(products);
+        }
     }
 }
