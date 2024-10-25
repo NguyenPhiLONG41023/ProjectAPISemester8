@@ -5,6 +5,7 @@ using BusinessObject.ResourceModel.ViewModel;
 using DataAccess.DataAccess;
 using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -114,6 +115,12 @@ namespace DataAccess.Repository.Services
                 throw new Exception(ex.Message);
             }
             return _mapper.Map<List<OrderVM>>(Orders);
+        }
+
+        public OrderVM GetNewestOrder()
+        {
+            var newestOrder = _context.Orders.OrderByDescending(x => x.OrderDate).First();
+            return _mapper.Map<OrderVM>(newestOrder);
         }
 
         public void UpdateOrder(Guid id, OrderUpdateVM ord)

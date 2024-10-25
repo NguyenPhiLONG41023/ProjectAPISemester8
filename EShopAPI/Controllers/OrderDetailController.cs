@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using BusinessObject.ResourceModel.ViewModel;
 using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,13 @@ namespace EShopAPI.Controllers
             var orderdetails = _repository.GetTotalPrice(orderId);
             if (orderdetails == null) return NotFound();
             return Ok(orderdetails);
+        }
+
+        [HttpPost]
+        public IActionResult AddOrderDetail([FromBody] OrderDetailAddVM p)
+        {
+            _repository.AddNew(p);
+            return NoContent();
         }
     }
 }

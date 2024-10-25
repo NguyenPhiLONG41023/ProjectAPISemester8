@@ -54,8 +54,10 @@ namespace EShopAPI.Controllers
         [HttpPost]
         public IActionResult AddOrder([FromBody] OrderUpdateVM p)
         {
+            p.OrderDate = DateTime.Now;
             _repository.AddOrder(p);
-            return NoContent();
+            var result = _repository.GetNewestOrder();
+            return Ok(result);
         }
 
 

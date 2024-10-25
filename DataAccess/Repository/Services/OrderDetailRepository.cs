@@ -22,16 +22,18 @@ namespace DataAccess.Repository.Services
             _context = context;
             _mapper = mapper;
         }
-        //public void AddNew(OrderDetail ordd)
-        //{
-        //    try
-        //    {
-        //        _context.OrderDetails.Add(ordd);
-        //        _context.SaveChanges();
 
-        //    }
-        //    catch (Exception ex) { throw new Exception(ex.Message); }
-        //}
+        public void AddNew(OrderDetailAddVM ordd)
+        {
+            try
+            {
+                var p = _mapper.Map<OrderDetail>(ordd);
+                _context.OrderDetails.Add(p);
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex) { throw new Exception(ex.Message); }
+        }
 
         public List<OrderDetailVM> GetOrderDetailsListByOrderID(Guid ordID)
         {

@@ -148,6 +148,22 @@
   },
   {
     "ContainingType": "EShopAPI.Controllers.OrderDetailController",
+    "Method": "AddOrderDetail",
+    "RelativePath": "api/OrderDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "p",
+        "Type": "BusinessObject.ResourceModel.ViewModel.OrderDetailAddVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EShopAPI.Controllers.OrderDetailController",
     "Method": "GetOrderDetailByOrderId",
     "RelativePath": "api/OrderDetail/GetOrderDetailsListByOrderID",
     "HttpMethod": "GET",
@@ -310,6 +326,27 @@
       {
         "Name": "search",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EShopAPI.Controllers.ProductController",
+    "Method": "UpdateProductQuantity",
+    "RelativePath": "api/Product/UpdateProductQuantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantity",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

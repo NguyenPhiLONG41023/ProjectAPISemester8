@@ -11,7 +11,7 @@ namespace DataAccess.Repository.Interfaces
     public interface IOrderDetailRepository
     {
         List<OrderDetailVM> GetOrderDetailsListByOrderID(Guid ordID);
-        //void AddNew(OrderDetail ordd);
+        void AddNew(OrderDetailAddVM ordd);
         decimal GetTotalPrice(Guid ordId);
     }
 }

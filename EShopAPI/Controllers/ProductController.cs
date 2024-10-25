@@ -111,5 +111,20 @@ namespace EShopAPI.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPut("UpdateProductQuantity")]
+        public IActionResult UpdateProductQuantity(Guid id, int quantity)
+        {
+            using (NewProjectDBContext context = new NewProjectDBContext())
+            {
+                var product = context.Products.FirstOrDefault(x => x.ProductId == id);
+                if(product != null)
+                {
+                    product.Quantity -= quantity;
+                    context.SaveChanges();
+                }
+                return NoContent();
+            }
+        }
     }
 }

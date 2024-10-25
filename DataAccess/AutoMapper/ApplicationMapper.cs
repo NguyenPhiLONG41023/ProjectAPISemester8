@@ -35,7 +35,9 @@ namespace DataAccess.AutoMapper
             CreateMap<OrderDetail, OrderDetailVM>()
                 .ForMember(dest => dest.ProductName, otp => otp.MapFrom(src => src.Product.ProductName))
                 .ReverseMap();
+            CreateMap<OrderDetail, OrderDetailAddVM>().ReverseMap();
             CreateMap<Order, OrderUpdateVM>().ReverseMap();
+            CreateMap<OrderVM, OrderUpdateVM>().ReverseMap();
         }
     }
 }
