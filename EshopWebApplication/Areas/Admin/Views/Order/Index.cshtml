@@ -74,7 +74,7 @@
                                         <tr>
                                             <td>@u.OrderId</td>
                                             <td>@u.UserId</td>
-                                            <td>@u.OrderDate</td>
+                                            <td>@u.OrderDate?.ToString("dd/MM/yyyy")</td>
                                             <td>@u.TotalPrice</td>
                                             @if (u.Status == "0")
                                             {
@@ -173,7 +173,7 @@
             document.getElementById("OrderId").value = orderId;
             document.getElementById("UserId").value = userId;
             var date = new Date(orderDate);
-            var formattedDate = date.toISOString().split('T')[0];
+            var localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().split('T')[0];
             document.getElementById("OrderDate").value = formattedDate;
             document.getElementById("TotalPrice").value = TotalPrice;
             document.getElementById("Status").value = Status;

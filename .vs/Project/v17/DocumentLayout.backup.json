@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\orderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\orderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\views\\auth\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\views\\auth\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\businessobject\\resourcemodel\\viewmodel\\orderdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17C0318C-528C-43DB-AD95-37CC5834F6A6}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\resourcemodel\\viewmodel\\orderdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\views\\auth\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\views\\auth\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\dataaccess\\repository\\services\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E7BC7DF-5C2A-48C7-B2E6-7C8C2D89ECE4}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\services\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AE6233B-ABC5-42AF-A8ED-1242531D195C}|EShopAPI\\EShopAPI.csproj|solutionrelative:eshopapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,47 +26,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 606,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "EshopWebApplication\\Controllers\\CartController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\CartController.cs",
-              "RelativeToolTip": "EshopWebApplication\\Controllers\\CartController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAkwFsAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T16:01:49.504Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderDetailController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderDetailController.cs",
-              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\OrderDetailController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderDetailController.cs",
-              "RelativeToolTip": "EShopAPI\\Controllers\\OrderDetailController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T06:44:18.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderDetailVM.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\ResourceModel\\ViewModel\\OrderDetailVM.cs",
-              "RelativeDocumentMoniker": "BusinessObject\\ResourceModel\\ViewModel\\OrderDetailVM.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\BusinessObject\\ResourceModel\\ViewModel\\OrderDetailVM.cs",
-              "RelativeToolTip": "BusinessObject\\ResourceModel\\ViewModel\\OrderDetailVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T06:43:54.928Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -121,40 +74,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Repository\\Services\\OrderRepository.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\DataAccess\\Repository\\Services\\OrderRepository.cs",
-              "RelativeToolTip": "DataAccess\\Repository\\Services\\OrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:55:47.511Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "EShopAPI\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwDwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:27:24.328Z",
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Auth\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "EshopWebApplication\\Views\\Auth\\ChangePassword.cshtml",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Auth\\ChangePassword.cshtml",
+              "RelativeToolTip": "EshopWebApplication\\Views\\Auth\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-27T13:49:19.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "EShopAPI\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAwwHsAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EShopAPI\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EShopAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EShopAPI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T14:54:25.446Z"
+              "WhenOpened": "2024-10-27T13:43:38.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "EshopWebApplication\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "EshopWebApplication\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAA1wPUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T13:23:41.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditProfile.cshtml",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Auth\\EditProfile.cshtml",
+              "RelativeDocumentMoniker": "EshopWebApplication\\Views\\Auth\\EditProfile.cshtml",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Auth\\EditProfile.cshtml*",
+              "RelativeToolTip": "EshopWebApplication\\Views\\Auth\\EditProfile.cshtml*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-27T13:22:28.818Z",
+              "EditorCaption": ""
             }
           ]
         },

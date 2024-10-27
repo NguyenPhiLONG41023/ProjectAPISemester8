@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BusinessObject.ResourceModel.ViewModel.OrderVM>
+
+<div class="container" style="padding: 20px;">
+    <h2>Order History</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Order Date</th>
+                <th>Total Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.OrderDate?.ToString("yyyy-MM-dd")</td>
+                        <td>@order.TotalPrice.ToString("C")</td>
+                        <td>
+                            @if (order.Status == "0")
+                            {
+                                <span>Pending</span>
+                            }
+                            else if (order.Status == "1")
+                            {
+                                <span>Shipping</span>
+                            }
+                            else if (order.Status == "2")
+                            {
+                                <span>Done</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center">No orders found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

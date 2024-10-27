@@ -36,7 +36,12 @@ namespace EshopWebApplication
             {
                 options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
             });
-			builder.Services.AddAutoMapper(typeof(ApplicationMapper));
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
+            });
+
+            builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 			builder.Services.AddScoped<IProductRepository, ProductRepository>();
 			builder.Services.AddScoped<ProductRepository>();
 			builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();

@@ -9,6 +9,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using BusinessObject.ResourceModel.ViewModel;
+using Microsoft.AspNetCore.Authorization;
+using System.Runtime.CompilerServices;
 
 namespace EshopWebApplication.Controllers
 {
@@ -34,8 +36,8 @@ namespace EshopWebApplication.Controllers
 
         public async Task<IActionResult> Logout()
         {
-			HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-			return RedirectToAction("Index", "Home");
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -63,19 +65,20 @@ namespace EshopWebApplication.Controllers
 
                 if (user != null)
                 {
-					var claims = new List<Claim>
-			        {
-				        new Claim(ClaimTypes.Name, username),
-				        new Claim(ClaimTypes.Role, user.RoleName),
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, username),
+                        new Claim(ClaimTypes.Email, user.Email),
+                        new Claim(ClaimTypes.Role, user.RoleName),
                         new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
                     };
-					var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-					var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-					await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
-					return RedirectToAction("Index", "Home");
-				}
+                    return RedirectToAction("Index", "Home");
+                }
             }
             ViewBag.ErrorMessage = "Wrong email or password";
             return View();
@@ -120,6 +123,7 @@ namespace EshopWebApplication.Controllers
             return View();
         }
 
+        [Authorize(Policy = "RequireUserRole")]
         public async Task<IActionResult> EditProfile()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -144,6 +148,7 @@ namespace EshopWebApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "RequireUserRole")]
         public async Task<IActionResult> EditProfile(UserUpdateVM product)
         {
             var data = System.Text.Json.JsonSerializer.Serialize(product);
@@ -152,12 +157,94 @@ namespace EshopWebApplication.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 return NotFound();
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                ViewBag.ErrorMessage = "Please enter your email";
+                return View();
+            }
+
+            // Gọi API forgot password
+            HttpResponseMessage response = await client.PostAsync($"http://localhost:5191/api/User/forgot-password?email={email}", null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                ViewBag.ErrorMessage = "This email is not registered in our system";
+                return View();
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "An error occurred. Please try again later.";
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string currentPassword, string newPassword, string confirmNewPassword)
+        {
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(email))
+            {
+                ViewBag.ErrorMessage = "User email not found.";
+                return RedirectToAction("EditProfile");
+            }
+
+            var changePasswordData = new
+            {
+                email = email,
+                currentPassword = currentPassword,
+                newPassword = newPassword,
+                confirmNewPassword = confirmNewPassword
+            };
+
+            var json = JsonConvert.SerializeObject(changePasswordData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await client.PostAsync("http://localhost:5191/api/User/change-password", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                ViewBag.ErrorMessage = "Password changed successfully!";
+            }
+            else
+            {
+                string errorResponse = await response.Content.ReadAsStringAsync();
+                var errorData = JsonConvert.DeserializeObject<Dictionary<string, object>>(errorResponse);
+                if (errorData.ContainsKey("message"))
+                {
+                    ViewBag.ErrorMessage = errorData["message"].ToString();
+                }
+            }
+            return View("ChangePassword");
+        }
+
     }
 }
