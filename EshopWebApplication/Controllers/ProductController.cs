@@ -43,16 +43,17 @@ namespace EshopWebApplication.Controllers
 
             if (!string.IsNullOrEmpty(search))
             {
-                filters.Add($"contains(productName, '{search}')");
+                //filters.Add($"contains(productName, '{search}')");
+                filters.Add($"contains(tolower(productName), '{search.ToLower()}')");
             }
 
             if (filters.Count > 0)
             {
-                ProductApiUrlSearch += string.Join(" and ", filters); // Nối các điều kiện bằng "and"
+                ProductApiUrlSearch += string.Join(" and ", filters);
             }
             else
             {
-                ProductApiUrlSearch += "true"; // Hoặc bạn có thể bỏ dòng này nếu không muốn trả về gì
+                ProductApiUrlSearch += "true";
             }
 
             HttpResponseMessage response = await client.GetAsync(ProductApiUrlSearch);

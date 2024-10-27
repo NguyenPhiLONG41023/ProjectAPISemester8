@@ -230,7 +230,13 @@
                 .then(response => response.json())
                 .then(data => {
                     let brandSelect = document.getElementById('brandSelect');
-                    //brandSelect.innerHTML = '';
+                    brandSelect.innerHTML = '';
+
+                    let allOption = document.createElement('option');
+                    allOption.value = '';
+                    allOption.text = 'All';
+                    brandSelect.appendChild(allOption);
+
                     data.forEach(brand => {
                         let option = document.createElement('option');
                         option.value = brand.brandId;
