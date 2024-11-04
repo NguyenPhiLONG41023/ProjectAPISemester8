@@ -232,7 +232,7 @@ namespace EshopWebApplication.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                ViewBag.ErrorMessage = "Password changed successfully!";
+                ViewBag.SuccessMessage = "Password changed successfully!";
             }
             else
             {

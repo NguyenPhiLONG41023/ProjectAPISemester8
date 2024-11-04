@@ -15,7 +15,7 @@ namespace DataAccess.Configuration
         {
             builder.ToTable("OrderDetail");
             builder.HasKey(x => new {x.OrderId, x.ProductId});
-            builder.Property(e => e.Price).HasColumnType("decimal(10, 2)");
+            builder.Property(e => e.Price).HasColumnType("decimal(18, 2)");
             builder.HasOne(x => x.Order).WithMany(x => x.OrderDetails).HasForeignKey(x => x.OrderId);
             builder.HasOne(x => x.Product).WithMany(x => x.OrderDetails).HasForeignKey(x => x.ProductId);
         }

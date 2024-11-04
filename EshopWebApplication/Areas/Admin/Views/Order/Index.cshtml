@@ -119,7 +119,6 @@
             </div>
             <div class="m-form__body">
                 <form id="editForm" method="post" asp-area="Admin" asp-controller="Order" asp-action="Edit">
-                    
                     <div class="m-form__row">
                         <div class="form__row-grid" style="grid-template-columns: calc(45% - 4px) calc(55% - 4px);">
                             <div class="input-component">
@@ -132,6 +131,7 @@
                             </div>
                         </div>
                     </div>
+                    <label title="Email" class="m-form__label">OrderDate</label>
                     <input type="date" class="m-form__input" id="OrderDate" name="OrderDate" readonly>
                     <div class="m-form__row">
                         <div class="input-component">
@@ -169,11 +169,12 @@
         });
 
         function editOrder(orderId, userId, orderDate, TotalPrice, Status) {
+            debugger;
             document.getElementById("dlgDetail").style.display = "block";
             document.getElementById("OrderId").value = orderId;
             document.getElementById("UserId").value = userId;
             var date = new Date(orderDate);
-            var localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+            var formattedDate = date.toISOString().split('T')[0];
             document.getElementById("OrderDate").value = formattedDate;
             document.getElementById("TotalPrice").value = TotalPrice;
             document.getElementById("Status").value = Status;
