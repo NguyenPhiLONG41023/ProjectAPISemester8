@@ -17,7 +17,7 @@
                 {
                     <tr>
                         <td>@order.OrderDate?.ToString("yyyy-MM-dd")</td>
-                        <td>@order.TotalPrice.ToString("C")</td>
+                                <td>@order.TotalPrice.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
                         <td>
                             @if (order.Status == "0")
                             {

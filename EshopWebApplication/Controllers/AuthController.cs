@@ -65,6 +65,11 @@ namespace EshopWebApplication.Controllers
 
                 if (user != null)
                 {
+                    if (user.Status == 0)
+                    {
+                        ViewBag.ErrorMessage = "You have been banned";
+                        return View();
+                    }
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, username),
@@ -103,7 +108,8 @@ namespace EshopWebApplication.Controllers
                 email = email,
                 username = username,
                 password = password,
-                confirmPassword = confirmPassword
+                confirmPassword = confirmPassword,
+                status = 1
             };
 
             var json = JsonConvert.SerializeObject(registerData);

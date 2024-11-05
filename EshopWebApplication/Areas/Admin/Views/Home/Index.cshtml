@@ -61,6 +61,7 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Role</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -73,7 +74,15 @@
                                             <td>@u.Email</td>
                                             <td>@u.PhoneNumber</td>
                                             <td>@u.RoleName</td>
-                                            <td><button class="m-btn edit-btn" onclick="editUser('@u.UserId', '@u.UserName', '@u.Email', '@u.PhoneNumber', '@u.RoleId')">Edit</button></td>
+                                            @if (u.Status == 1)
+                                            {
+                                                <td style="color: green">Active</td>
+                                            }
+                                            else if (u.Status == 0)
+                                            {
+                                                <td style="color: red">Disabled</td>
+                                            }
+                                            <td><button class="m-btn edit-btn" onclick="editUser('@u.UserId', '@u.UserName', '@u.Email', '@u.PhoneNumber', '@u.RoleId', '@u.Status')">Edit</button></td>
                                         </tr>
                                     }
                                 </tbody>
@@ -133,13 +142,13 @@
                                     <option value="b8884927-b566-442d-b0af-facc07bbbdfc">Admin</option>
                                 </select>
                             </div>
-                            @* <div class="input-component">
+                            <div class="input-component">
                                 <label class="m-form__label">Status</label>
                                 <select class="m-form__input" id="Status" name="Status" class="form-control">
                                     <option value="1">Active</option>
                                     <option value="0">Disabled</option>
                                 </select>
-                            </div> *@
+                            </div>
                         </div>
                     </div>
                     <div class="m-form__footer">
@@ -159,13 +168,14 @@
             });
         });
 
-        function editUser(userId, userName, email, phoneNumber, roleId) {
+        function editUser(userId, userName, email, phoneNumber, roleId, status) {
             document.getElementById("dlgDetail").style.display = "block";
             document.getElementById("UserId").value = userId;
             document.getElementById("UserName").value = userName;
             document.getElementById("Email").value = email;
             document.getElementById("PhoneNumber").value = phoneNumber;
             document.getElementById("RoleName").value = roleId;
+            document.getElementById("Status").value = status;
         }
 
         function closeForm() {

@@ -13,5 +13,6 @@ namespace BusinessObject.ResourceModel.ViewModel.User
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string RoleId { get; set; }
+        public int Status { get; set; }
     }
 }

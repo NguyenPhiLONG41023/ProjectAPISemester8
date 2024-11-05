@@ -17,5 +17,6 @@ namespace BusinessObject.ResourceModel.ViewModel
         public decimal Price { get; set; }
         public string? Image { get; set; }
         public int Status { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace DataAccess.Configuration
         {
             builder.ToTable("Product");
             builder.HasKey(x => x.ProductId);
+            builder.Property(x => x.CreatedDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.ProductName).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Description).HasColumnType("Text"); //moi
             builder.Property(e => e.Price).HasColumnType("decimal(10, 2)");

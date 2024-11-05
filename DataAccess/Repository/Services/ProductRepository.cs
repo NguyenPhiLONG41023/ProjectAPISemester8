@@ -51,7 +51,8 @@ namespace DataAccess.Repository.Services
             Product pro = null;
             try
             {
-                pro = _context.Products.Include(x => x.Brand).SingleOrDefault(pro => pro.ProductId == proID);
+                pro = _context.Products.Include(x => x.Brand).Where(x => x.Status == 1 && x.Quantity >= 0)
+                    .SingleOrDefault(pro => pro.ProductId == proID);
             }
             catch (Exception ex)
             {

@@ -20,7 +20,7 @@ namespace EshopWebApplication.Controllers
 		// GET: Products
 		public async Task<IActionResult> Index()
 		{
-			HttpResponseMessage response = await client.GetAsync(ProductApiUrl);
+			HttpResponseMessage response = await client.GetAsync("http://localhost:5191/api/Product?$filter=status%20eq%201%20and%20quantity%20gt%200");
 			string strData = await response.Content.ReadAsStringAsync();
 
 			var options = new JsonSerializerOptions
@@ -35,7 +35,7 @@ namespace EshopWebApplication.Controllers
         {
             string ProductApiUrlSearch = $"{ProductApiUrl}?$filter="; 
             List<string> filters = new List<string>();
-
+            filters.Add("status eq 1 and quantity gt 0");
             if (brandId.HasValue)
             {
                 filters.Add($"brandId eq {brandId}");

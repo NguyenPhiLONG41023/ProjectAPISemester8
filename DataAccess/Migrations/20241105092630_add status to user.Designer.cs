@@ -4,6 +4,7 @@ using DataAccess.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(NewProjectDBContext))]
-    partial class NewProjectDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241105092630_add status to user")]
+    partial class addstatustouser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime?>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 11, 5, 16, 29, 56, 377, DateTimeKind.Local).AddTicks(6136));
+                        .HasDefaultValue(new DateTime(2024, 11, 5, 16, 26, 30, 433, DateTimeKind.Local).AddTicks(4623));
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -95,11 +97,6 @@ namespace DataAccess.Migrations
 
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 11, 5, 16, 29, 56, 377, DateTimeKind.Local).AddTicks(4371));
 
                     b.Property<string>("Description")
                         .HasColumnType("Text");

@@ -1,4 +1,7 @@
-﻿using BusinessObject.ResourceModel.ViewModel;
+﻿using BusinessObject.Models;
+using BusinessObject.ResourceModel.ViewModel;
+using DataAccess.DataAccess;
+using EShopAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -84,14 +87,32 @@ namespace EshopWebApplication.Areas.Admin.Controllers
             var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PutAsync(MemberApiUrlDetail, httpContent);
 
-            if (response.IsSuccessStatusCode)
+            using (NewProjectDBContext context = new NewProjectDBContext())
             {
-                TempData["Message"] = "Edit success";
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return NotFound();
+                var user = context.Users.FirstOrDefault(x => x.Id == order.UserId);
+
+                if (user != null && response.IsSuccessStatusCode)
+                {
+                    string mess = null;
+                    if (order.Status == "0") mess = "Pending";
+                    if (order.Status == "1") mess = "Shipping";
+                    if (order.Status == "2") mess = "Done";
+
+                    var emailBody = $@"
+                    <h2>Order Status Update</h2>
+                    <p>Your order status has been updated to: {mess}</p>
+                    <p>If you have any questions, please contact support.</p>
+                    ";
+
+                    SendMailSMTP.SendMail(user.Email, "Order Status Update", emailBody);
+
+                    TempData["Message"] = "Edit success";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
         }
     }

@@ -47,6 +47,14 @@
         <div class="page-content">
             <div class="m-page-header">
                 <div class="m-page-header__title">Manage Product</div>
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="m-page-header__title alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+                @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                {
+                    <div class="m-page-header__title alert alert-success">@ViewBag.SuccessMessage</div>
+                }
                 <div class="m-page-header__button">
                     <button id="btnAdd" class="m-btn m-btn-icon m-btn-icon-add" onclick="addProduct()">Thêm mới</button>
                 </div>
@@ -54,7 +62,19 @@
                     <button id="btnImport" class="m-btn m-btn-icon m-btn-icon-add" onclick="importExcelProduct()">Nhập excel</button>
                 </div>
             </div>
-
+            <form asp-controller="Product" asp-action="Index" method="get">
+                <table>
+                    <tr>
+                        <td>Search By Name</td>
+                        <td><input type="text" name="search" /></td>
+                        <td>PriceFrom</td>
+                        <td><input type="number" name="priceFrom" /></td>
+                        <td>PriceTo</td>
+                        <td><input type="number" name="priceTo" /></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Search" />
+            </form>
             <div class="m-page-table">
                 <div class="m-page-grid">
                     <div id="table-wrapper">
@@ -66,11 +86,10 @@
                                         <th>Brand</th>
                                         <th>ProductName</th>
                                         <th>Quantity</th>
-                                        <th>Desc</th>
+                                        <th style="width: 400px">Desc</th>
                                         <th>Price</th>
                                         <th>Status</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -83,10 +102,10 @@
                                             <td>@u.Quantity</td>
                                             @if (u.Description != null && u.Description.Length > 100)
                                             {
-                                                <td>@u.Description.Substring(0, 200)...</td>
+                                                <td>@u.Description.Substring(0, 100)...</td>
                                             }
                                             else
-                                                {
+                                            {
                                                 <td>@u.Description</td>
                                             }
                                             <td>@u.Price</td>
@@ -98,9 +117,9 @@
                                             {
                                                 <td style="color: red">Disabled</td>
                                             }
-                                            <td><button class="m-btn edit-btn" onclick="editProduct('@u.ProductId', '@u.BrandId', '@u.BrandName', '@u.ProductName', '@u.Quantity', '@u.Description', '@u.Price', '@u.Image', '@u.Status')">Edit</button></td>
-                                            <td>
-                                                <button class="m-btn edit-btn" onclick="deleteProduct('@u.ProductId')">Delete</button>
+                                            <td style="text-align: center; vertical-align: middle;">
+                                                <button class="m-btn edit-btn" style="display: inline; margin-bottom: 5px;" onclick="editProduct('@u.ProductId', '@u.BrandId', '@u.BrandName', '@u.ProductName', '@u.Quantity', '@u.Description', '@u.Price', '@u.Image', '@u.CreatedDate', '@u.Status')">Edit</button>
+                                                <button class="m-btn edit-btn" style="display: inline;" onclick="deleteProduct('@u.ProductId')">Delete</button>
                                             </td>
                                         </tr>
                                     }
@@ -109,10 +128,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Pagination -->
-                @* <div class="m-paging">
-                    <div class="m-paging__left" id="productCount" data-count="@Model.Count">Tổng: @Model.Count</div>
-                </div> *@
             </div>
         </div>
     </div>
@@ -170,8 +185,9 @@
                         <label title="Công ty" class="m-form__label">
                             Description
                         </label>
-                        <textarea id="Description" name="Description" class="m-form__input" rows="4" style="width: 100%; height: 140px"></textarea>
+                        <textarea id="Description" name="Description" class="m-form__input" rows="4" style="width: 100%; height: 120px"></textarea>
                     </div>
+                    <input hidden type="date" class="m-form__input" id="CreatedDate" name="CreatedDate" readonly>
                     <div class="m-form__row">
                         <div class="form__row-grid">
                             <div class="input-component">
@@ -290,7 +306,7 @@
             });
         });
 
-        function editProduct(productid, brandid, brandname, productName, quantity, description, price, image, status) {
+        function editProduct(productid, brandid, brandname, productName, quantity, description, price, image, createdate, status) {
             // console.log(productid, brandid, brandname, productName, quantity, description, price, image, status);
             document.getElementById("dlgEditProduct").style.display = "block";
             document.getElementById("ProductId").value = productid;
@@ -300,6 +316,9 @@
             document.getElementById("Description").value = description;
             document.getElementById("Price").value = price;
             document.getElementById("Image").value = image;
+            var date = new Date(createdate);
+            var formattedDate = date.toLocaleDateString('en-CA');
+            document.getElementById("CreatedDate").value = formattedDate;
             document.getElementById("Status").value = status;
             loadBrands(brandid);
         }

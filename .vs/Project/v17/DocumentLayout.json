@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|d:\\fptcode\\8\\prn231\\trenlop\\project\\eshopwebapplication\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5DD5D21-E31F-47C3-BD4E-D1E635115018}|EshopWebApplication\\EshopWebApplication.csproj|solutionrelative:eshopwebapplication\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 606,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,52 +66,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Program.cs",
-              "RelativeDocumentMoniker": "EshopWebApplication\\Program.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Program.cs",
-              "RelativeToolTip": "EshopWebApplication\\Program.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAQwFEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T10:44:37.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "EshopWebApplication\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "EshopWebApplication\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAA9wJYAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T10:44:25.324Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "EshopWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "EshopWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAZAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "EshopWebApplication\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "EshopWebApplication\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwEsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-04T10:43:53.613Z",
+              "WhenOpened": "2024-11-05T16:17:22.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "EshopWebApplication\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "EshopWebApplication\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "EshopWebApplication\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\FPTCode\\8\\PRN231\\trenlop\\Project\\EshopWebApplication\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "EshopWebApplication\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwFAAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T09:29:18.704Z"
+              "WhenOpened": "2024-11-05T15:56:46.629Z",
+              "EditorCaption": ""
             }
           ]
         },

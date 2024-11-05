@@ -174,7 +174,7 @@
             document.getElementById("OrderId").value = orderId;
             document.getElementById("UserId").value = userId;
             var date = new Date(orderDate);
-            var formattedDate = date.toISOString().split('T')[0];
+            var formattedDate = date.toLocaleDateString('en-CA');
             document.getElementById("OrderDate").value = formattedDate;
             document.getElementById("TotalPrice").value = TotalPrice;
             document.getElementById("Status").value = Status;

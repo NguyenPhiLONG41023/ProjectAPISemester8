@@ -19,14 +19,24 @@ namespace DataAccess.AutoMapper
             CreateMap<Product, ProductVM>()
                 .ForMember(dest => dest.BrandName, otp => otp.MapFrom(src => src.Brand.BrandName))
                 .ReverseMap();
-            CreateMap<IdentityUser, UserVM>()
+            //CreateMap<IdentityUser, UserVM>()
+            //    .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
+            //    .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
+            //    .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+            //    .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
+            //    .ForMember(dest => dest.RoleId, opt => opt.Ignore())
+            //    .ForMember(dest => dest.RoleName, opt => opt.Ignore())
+            //    .ReverseMap();
+            CreateMap<User, UserVM>()
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
                 .ForMember(dest => dest.RoleId, opt => opt.Ignore())
                 .ForMember(dest => dest.RoleName, opt => opt.Ignore())
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
                 .ReverseMap();
+
             CreateMap<Product, ProductAddVM>().ReverseMap();
             CreateMap<ProductImport, Product>();
             CreateMap<Brand, BrandVM>().ReverseMap();

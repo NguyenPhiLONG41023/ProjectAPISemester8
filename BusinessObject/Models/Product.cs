@@ -16,6 +16,7 @@ namespace BusinessObject.Models
         public decimal Price { get; set; }
         public string? Image { get; set; }
         public int Status { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public virtual Brand? Brand { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }

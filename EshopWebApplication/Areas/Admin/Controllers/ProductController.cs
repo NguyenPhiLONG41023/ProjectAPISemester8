@@ -21,9 +21,10 @@ namespace EshopWebApplication.Areas.Admin.Controllers
             ProductApiUrl = "http://localhost:5191/api/Product";
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search, decimal? priceFrom, decimal? priceTo)
         {
-            HttpResponseMessage response = await client.GetAsync(ProductApiUrl);
+            string ProductApiUrlSearch = $"{ProductApiUrl}/search?search={search}&priceFrom={priceFrom}&priceTo={priceTo}";
+            HttpResponseMessage response = await client.GetAsync(ProductApiUrlSearch);
             string strData = await response.Content.ReadAsStringAsync();
 
             var options = new JsonSerializerOptions
@@ -31,6 +32,9 @@ namespace EshopWebApplication.Areas.Admin.Controllers
                 PropertyNameCaseInsensitive = true
             };
             List<ProductVM> listProducts = JsonSerializer.Deserialize<List<ProductVM>>(strData, options);
+
+            ViewBag.ErrorMessage = TempData["ErrorMessage"];
+            ViewBag.SuccessMessage = TempData["SuccessMessage"];
             return View(listProducts);
         }
 
@@ -105,11 +109,13 @@ namespace EshopWebApplication.Areas.Admin.Controllers
                 HttpResponseMessage response = await client.PostAsync("http://localhost:5191/api/Product/import", formData);
                 if (response.IsSuccessStatusCode)
                 {
+                    TempData["SuccessMessage"] = $"Import success";
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
-                    return BadRequest();
+                    TempData["ErrorMessage"] = $"Import failed";
+                    return RedirectToAction(nameof(Index));
                 }
             }
         }

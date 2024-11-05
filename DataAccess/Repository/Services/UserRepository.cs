@@ -82,6 +82,7 @@ namespace DataAccess.Repository.Services
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.Username,
+                Status = 1
             };
 
             var resultCreateUser = await _userManager.CreateAsync(user, model.Password);
@@ -141,6 +142,7 @@ namespace DataAccess.Repository.Services
             user.UserName = model.UserName;
             user.Email = model.Email;
             user.PhoneNumber = model.PhoneNumber;
+            user.Status = model.Status;
 
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded) return null;

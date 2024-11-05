@@ -27,7 +27,7 @@ namespace EshopWebApplication.Controllers
 			//    return Redirect("Login");
 			//}
 			//ViewBag.Email = HttpContext.Session.GetString("email");
-			HttpResponseMessage response = await client.GetAsync("http://localhost:5191/api/Product?$top=5");
+			HttpResponseMessage response = await client.GetAsync("http://localhost:5191/api/Product?$filter=status%20eq%201&$orderby=CreatedDate%20desc&$top=5");
 			string strData = await response.Content.ReadAsStringAsync();
 
 			var options = new JsonSerializerOptions

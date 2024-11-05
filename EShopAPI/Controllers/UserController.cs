@@ -162,12 +162,6 @@ namespace EShopAPI.Controllers
             var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
             if (result.Succeeded)
             {
-                var emailBody = $@"
-                <h2>Password Changed Successfully</h2>
-                <p>Your password has been changed successfully.</p>
-                <p>If you did not make this change, please contact support immediately.</p>";
-
-                SendMailSMTP.SendMail(user.Email, "Password Change Confirmation", emailBody);
 
                 return Ok(new { message = "Password changed successfully" });
             }

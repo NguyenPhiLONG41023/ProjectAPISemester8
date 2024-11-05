@@ -9,6 +9,7 @@ namespace BusinessObject.Models
 {
     public class User : IdentityUser
     {
+        public int Status { get; set; }
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

@@ -48,7 +48,14 @@ namespace EshopWebApplication.Controllers
                 Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
                 if (ammount.HasValue)
                 {
-                    Cart.AddItem(vm, ammount);
+                    if (ammount > vm.Quantity)
+                    {
+                        return RedirectToAction("Index", "Product");
+                    }
+                    else
+                    {
+                        Cart.AddItem(vm, ammount);
+                    }
                 }
                 else
                 {
